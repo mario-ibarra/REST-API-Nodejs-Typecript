@@ -1,5 +1,5 @@
 export default {
-    PORT: 5000,
+    PORT: 1337,
     dbUri: "",
     saltWorkFactor: 10,
     accessTokenTtl: '15m',

@@ -1,11 +1,12 @@
-import { DocumentDefinition, FilterQuery, QueryOptions, UpdateQuery } from "mongoose";
-import ProductModel, { ProductDocument } from "../models/product.model";
+import { FilterQuery, QueryOptions, UpdateQuery } from "mongoose";
+import ProductModel, { IProductInput, ProductDocument } from "../models/product.model";
 
  
- export async function createProduct(input: DocumentDefinition<Omit<ProductDocument, 'createdAt' | 'updatedAt' >>) {
+ export async function createProduct(
+     input: IProductInput) {
      return ProductModel.create(input)
  }
-
+ 
  export async function findProduct(
      query: FilterQuery<ProductDocument>,
      options: QueryOptions = { lean: true }

@@ -4,7 +4,7 @@ import { UserDocument } from "./user.model";
 
 const nanoid = customAlphabet("abcdefghijklmnopqrstuvwxyz0123456789", 10);
 
-export interface ProductInput {
+export interface IProductInput {
   user: UserDocument["_id"];
   title: string;
   description: string;
@@ -12,7 +12,7 @@ export interface ProductInput {
   image: string;
 }
 
-export interface ProductDocument extends ProductInput, mongoose.Document {
+export interface ProductDocument extends IProductInput, mongoose.Document {
   createdAt: Date;
   updatedAt: Date;
 }
